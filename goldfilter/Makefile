@@ -44,13 +44,3 @@ fmt:
 	@clang-format -i **/*.cpp **/*.hpp
 
 .PHONY: clean fmt
-
-ifneq ($(MAKECMDGOALS),clean)
-
-DEPS := $(patsubst %.cpp,%.d, $(SOURCE))
-
-%.d:%.cpp
-	@$(CXX) $(CXXFLAGS) -MF"$@" -MG -MM -MP -MT"$@" -MT"$(<:.cpp=.o)" "$<"
-
--include $(DEPS)
-endif

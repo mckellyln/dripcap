@@ -9,10 +9,9 @@ export NVM_DIR=~/.nvm
 nvm install $NODE_VERSION
 nvm use --delete-prefix $NODE_VERSION
 
-export GOROOT=/usr/local/opt/go/libexec
-export GOPATH=$HOME/gosrc
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+mkdir ~/.electron
+curl -L -o ~/.electron/electron-v1.4.1-darwin-x64.zip https://github.com/electron/electron/releases/download/v1.4.1/electron-v1.4.1-darwin-x64.zip
+curl -L -o ~/.electron/SHASUMS256.txt-1.4.1 https://github.com/electron/electron/releases/download/v1.4.1/SHASUMS256.txt
 
 export CC=clang
 export CXX=clang++
